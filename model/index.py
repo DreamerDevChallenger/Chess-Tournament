@@ -27,3 +27,11 @@ class PlayerModel:
 
     def get_players(self):
         return self.load_data()
+
+class RoundModel:
+    def __init__(self, db_path=''):
+      self.db_path = db_path
+
+class TournamentModel:
+  def __init__(self, db_path=''):
+    self.db_path = db_path

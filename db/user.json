@@ -16,5 +16,14 @@
         ],
         "firstname": "John",
         "lastname": "Doe"
+    },
+    {
+        "id": "34c6312c-5c4e-4ae9-8fce-01a9ce8168b3",
+        "username": "Arthe",
+        "nationalChessID": [
+            "B4864ef6z"
+        ],
+        "firstname": "Ilya",
+        "lastname": "Boukhechem"
     }
 ]

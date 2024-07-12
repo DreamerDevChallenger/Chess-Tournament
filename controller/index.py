@@ -10,3 +10,11 @@ class PlayerController:
     def show_players(self):
         players = self.model.get_players()
         self.view.display_players(players)
+
+class RoundController:
+    def __init__(self, model, view):
+        self.model = model
+
+class TournamentController:
+    def __init__(self, model, view):
+        self.model = model
