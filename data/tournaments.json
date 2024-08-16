@@ -1,0 +1,19 @@
+[
+    {
+        "id": "9ea54eb6-97fd-45bd-8ec2-7e236a722e00",
+        "name": "Tournament 1",
+        "location": "London",
+        "start_date": "2024-10-27",
+        "end_date": "2024-10-29",
+        "num_revolutions": 4,
+        "current_round": 0,
+        "rounds": [],
+        "players": [
+            "AB12345",
+            "AB12346",
+            "AB12347",
+            "AB14864"
+        ],
+        "description": "Lorem ipzum"
+    }
+]
