@@ -1,7 +1,5 @@
 import json
 import os
-import uuid
-from datetime import datetime
 import random
 
 class PlayerModel:
@@ -75,29 +73,26 @@ class TournamentModel:
                 current_round_number = len(tournament["rounds"]) + 1
                 round_name = f"Round {current_round_number}"
 
-                # For the first round, shuffle the players
+            
                 if current_round_number == 1:
                     if "players" not in tournament or len(tournament["players"]) < 2:
                         raise ValueError("Not enough players to start the first round.")
                     
                     shuffled_players = tournament["players"][:]
-                    random.shuffle(shuffled_players)  # Shuffle the players
-                    
-                    # Pair the players for matches (assumes an even number of players)
+                    random.shuffle(shuffled_players) 
+                              
                     matchups = []
                     for i in range(0, len(shuffled_players), 2):
-                        matchups.append((shuffled_players[i], shuffled_players[i + 1]))
+                        matchups.append(([shuffled_players[i], 0], [shuffled_players[i + 1], 0]))
                     
                     round_info = {"name": round_name, "matchups": matchups}
                 else:
-                    round_info = {"name": round_name}
+                    round_info = {"name": round_name, "matchups": []} 
 
-                # Add round information to the tournament
                 tournament["rounds"].append(round_info)
-                tournament["current_round"] = current_round_number  # Update current round
+                tournament["current_round"] = current_round_number 
 
                 break
         self.save_data(data)
-
     def get_tournaments(self):
         return self.load_data()

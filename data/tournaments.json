@@ -6,8 +6,25 @@
         "start_date": "2024-10-27",
         "end_date": "2024-10-29",
         "num_revolutions": 4,
-        "current_round": 0,
-        "rounds": [],
+        "current_round": 2,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matchups": [
+                    [
+                        "AB12345",
+                        "AB12346"
+                    ],
+                    [
+                        "AB12347",
+                        "AB14864"
+                    ]
+                ]
+            },
+            {
+                "name": "Round 2"
+            }
+        ],
         "players": [
             "AB12345",
             "AB12346",
@@ -15,5 +32,30 @@
             "AB14864"
         ],
         "description": "Lorem ipzum"
+    },
+    {
+        "id": "8f27a70e-4156-4a61-9184-26965de0494e",
+        "name": "Tournament 2",
+        "location": "New york",
+        "start_date": "2024-12-12",
+        "end_date": "2024-12-14",
+        "num_revolutions": 4,
+        "current_round": 1,
+        "rounds": [
+            {
+                "name": "Round 1",
+                "matchups": [
+                    [
+                        "AB12347",
+                        "AB14864"
+                    ]
+                ]
+            }
+        ],
+        "players": [
+            "AB12347",
+            "AB14864"
+        ],
+        "description": "lorem"
     }
 ]
