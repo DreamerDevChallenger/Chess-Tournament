@@ -2,6 +2,7 @@ import json
 import os
 import random
 
+
 class PlayerModel:
     def __init__(self, db_path='data/players.json'):
         self.db_path = db_path
@@ -28,6 +29,7 @@ class PlayerModel:
 
     def get_players(self):
         return self.load_data()
+
 
 class TournamentModel:
     def __init__(self, db_path='data/tournaments.json'):
@@ -73,26 +75,24 @@ class TournamentModel:
                 current_round_number = len(tournament["rounds"]) + 1
                 round_name = f"Round {current_round_number}"
 
-            
                 if current_round_number == 1:
                     if "players" not in tournament or len(tournament["players"]) < 2:
                         raise ValueError("Not enough players to start the first round.")
-                    
                     shuffled_players = tournament["players"][:]
-                    random.shuffle(shuffled_players) 
-                              
+                    random.shuffle(shuffled_players)
                     matchups = []
                     for i in range(0, len(shuffled_players), 2):
                         matchups.append(([shuffled_players[i], 0], [shuffled_players[i + 1], 0]))
-                    
+
                     round_info = {"name": round_name, "matchups": matchups}
                 else:
-                    round_info = {"name": round_name, "matchups": []} 
+                    round_info = {"name": round_name, "matchups": []}
 
                 tournament["rounds"].append(round_info)
-                tournament["current_round"] = current_round_number 
+                tournament["current_round"] = current_round_number
 
                 break
         self.save_data(data)
+
     def get_tournaments(self):
         return self.load_data()

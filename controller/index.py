@@ -11,6 +11,7 @@ class PlayerController:
         players = self.model.get_players()
         self.view.display_players(players)
 
+
 class TournamentController:
     def __init__(self, model, view):
         self.model = model

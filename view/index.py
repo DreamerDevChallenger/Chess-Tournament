@@ -28,7 +28,7 @@ class PlayerView:
                 if "matchups" in round_info:
                     for match in round_info["matchups"]:
                         print(f"Match: Player {match[0][0]} (Score: {match[0][1]}) vs "
-                              f"Player {match[1][0]} (Score: {match[1][1]})")                
+                              f"Player {match[1][0]} (Score: {match[1][1]})")
                 else:
                     print("No matchups for this round.")
 
