@@ -4,6 +4,8 @@ from controller.index import PlayerController, TournamentController
 
 
 def main():
+    """This is the main app that return the program
+    """    
     player_model = PlayerModel()
     tournament_model = TournamentModel()
     player_controller = PlayerController(player_model, None)

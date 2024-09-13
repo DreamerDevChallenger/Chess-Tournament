@@ -3,11 +3,23 @@ import uuid
 
 class PlayerView:
     def __init__(self, player_controller, tournament_controller):
+        """init PlayerView
+
+        Args:
+            player_controller (func): That return player_controller in controller
+            tournament_controller (func):  That return tournament_controller controller
+        """
+
         self.player_controller = player_controller
         self.tournament_controller = tournament_controller
 
     @staticmethod
     def display_players(players):
+        """That's showing all players
+
+        Args:
+            players (Array): return Array of players in db
+        """
         for player in players:
             print(
                 f"Chess ID: {player['id']}, Firstname: {player['firstname']}, Lastname: {player['lastname']}"
@@ -15,6 +27,11 @@ class PlayerView:
 
     @staticmethod
     def display_tournaments(tournaments):
+        """That's showing all tournaments
+
+        Args:
+            tournaments (Array): return Array of tournaments in db
+        """
         for tournament in tournaments:
             print(
                 f"ID: {tournament['id']}, Name: {tournament['name']}, Location: {tournament['location']}, "
@@ -27,16 +44,24 @@ class PlayerView:
                 print(f"{round_info['name']}")
                 if "matchups" in round_info:
                     for match in round_info["matchups"]:
-                        print(f"Match: Player {match[0][0]} (Score: {match[0][1]}) vs "
-                              f"Player {match[1][0]} (Score: {match[1][1]})")
+                        print(
+                            f"Match: Player {match[0][0]} (Score: {match[0][1]}) vs "
+                            f"Player {match[1][0]} (Score: {match[1][1]})"
+                        )
                 else:
                     print("No matchups for this round.")
 
     @staticmethod
     def display_message(message):
+        """return a message
+
+        Args:
+            message (string): message value
+        """
         print(message)
 
     def main_loop(self):
+        """That return all actions users can do in the program"""
         while True:
             print("\nChess Tournament Management System")
             print("1. Add Player")
